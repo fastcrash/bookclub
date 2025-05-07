@@ -9,12 +9,15 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
-import lombok.Getter;
-import lombok.Setter;
+import jakarta.validation.constraints.NotNull;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
-@Getter
-@Setter
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class Review {
 
     @Id
@@ -23,13 +26,16 @@ public class Review {
 
     @Max(5)
     @Min(1)
+    @NotNull
     private int rating;
 
     @Length(max = 500)
+    @NotNull    
     private String comment;
 
     @ManyToOne
     @JoinColumn(name = "book_id")
+    @NotNull
     private Book book;
 
 }

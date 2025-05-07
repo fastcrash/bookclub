@@ -12,7 +12,6 @@ public interface BookRepository extends JpaRepository<Book, Integer> {
     // For example, to find books by title or author, you can add methods like:
     // List<Book> findByTitle(String title);
     // List<Book> findByAuthor(String author);
-    Book findById(int id);
-   
+    Book findById(int id);    
 
 }
